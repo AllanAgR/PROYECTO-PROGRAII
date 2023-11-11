@@ -1,0 +1,241 @@
+Index: app/src/main/java/com/example/mascotafeliz/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.mascotafeliz\r\n\r\nimport android.content.Intent\r\nimport android.os.Bundle\r\nimport androidx.activity.ComponentActivity\r\nimport androidx.activity.compose.setContent\r\nimport androidx.compose.foundation.Image\r\nimport androidx.compose.foundation.background\r\nimport androidx.compose.foundation.border\r\nimport androidx.compose.foundation.layout.Arrangement\r\nimport androidx.compose.foundation.layout.Box\r\nimport androidx.compose.foundation.layout.Column\r\nimport androidx.compose.foundation.layout.Row\r\nimport androidx.compose.foundation.layout.Spacer\r\nimport androidx.compose.foundation.layout.fillMaxSize\r\nimport androidx.compose.foundation.layout.padding\r\nimport androidx.compose.foundation.layout.width\r\nimport androidx.compose.material3.MaterialTheme\r\nimport androidx.compose.material3.OutlinedButton\r\nimport androidx.compose.material3.Surface\r\nimport androidx.compose.material3.Text\r\nimport androidx.compose.runtime.Composable\r\nimport androidx.compose.ui.Alignment\r\nimport androidx.compose.ui.Modifier\r\nimport androidx.compose.ui.draw.clip\r\nimport androidx.compose.ui.platform.LocalContext\r\nimport androidx.compose.ui.res.painterResource\r\nimport androidx.compose.ui.tooling.preview.Preview\r\nimport androidx.compose.ui.unit.dp\r\nimport androidx.compose.ui.unit.sp\r\nimport com.example.mascotafeliz.navigation.Navigation\r\nimport com.example.mascotafeliz.screens.login.Login\r\nimport com.example.mascotafeliz.ui.theme.MascotaFelizTheme\r\n\r\nclass MainActivity : ComponentActivity() {\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContent {\r\n            MascotaFelizTheme {\r\n                // A surface container using the 'background' color from the theme\r\n                Surface(\r\n                    modifier = Modifier.fillMaxSize(),\r\n                    color = MaterialTheme.colorScheme.background\r\n                ) {\r\n                   MascotaApp()\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\r\n\r\n@Composable\r\nfun MascotaApp(){\r\n    Surface(modifier = Modifier\r\n        .fillMaxSize()\r\n        .padding(top = 46.dp),\r\n        color = MaterialTheme.colorScheme.background\r\n    ){\r\n        Column (\r\n            verticalArrangement = Arrangement.Center,\r\n            horizontalAlignment = Alignment.CenterHorizontally\r\n        ){\r\n            Navigation()\r\n        }\r\n    }}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/mascotafeliz/MainActivity.kt b/app/src/main/java/com/example/mascotafeliz/MainActivity.kt
+--- a/app/src/main/java/com/example/mascotafeliz/MainActivity.kt	(revision 2a28dbce75687c60d169cabc8c594e33694d58c7)
++++ b/app/src/main/java/com/example/mascotafeliz/MainActivity.kt	(date 1699454485344)
+@@ -48,7 +48,7 @@
+         }
+     }
+ }
+-
++@Preview (showBackground = true)
+ @Composable
+ fun MascotaApp(){
+     Surface(modifier = Modifier
+Index: app/src/main/java/com/example/mascotafeliz/screens/Alimentos.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.mascotafeliz.screens\r\n\r\nimport androidx.compose.material3.Text\r\nimport androidx.compose.runtime.Composable\r\nimport androidx.navigation.NavController\r\n\r\n@Composable\r\nfun Alimentos(navController: NavController){\r\n    Text(text = \"Hola\")\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/mascotafeliz/screens/Alimentos.kt b/app/src/main/java/com/example/mascotafeliz/screens/Alimentos.kt
+--- a/app/src/main/java/com/example/mascotafeliz/screens/Alimentos.kt	(revision 2a28dbce75687c60d169cabc8c594e33694d58c7)
++++ b/app/src/main/java/com/example/mascotafeliz/screens/Alimentos.kt	(date 1699611837748)
+@@ -1,10 +1,52 @@
+ package com.example.mascotafeliz.screens
+ 
++import androidx.compose.foundation.Image
++import androidx.compose.foundation.layout.Arrangement
++import androidx.compose.foundation.layout.Column
++import androidx.compose.foundation.layout.Row
++import androidx.compose.foundation.layout.Spacer
++import androidx.compose.foundation.layout.fillMaxSize
++import androidx.compose.foundation.layout.width
++import androidx.compose.material3.OutlinedButton
+ import androidx.compose.material3.Text
+ import androidx.compose.runtime.Composable
++import androidx.compose.ui.Alignment
++import androidx.compose.ui.Modifier
++import androidx.compose.ui.graphics.Color
++import androidx.compose.ui.res.painterResource
++import androidx.compose.ui.tooling.preview.Preview
++import androidx.compose.ui.unit.dp
++import androidx.compose.ui.unit.sp
+ import androidx.navigation.NavController
+ 
+ @Composable
+ fun Alimentos(navController: NavController){
+     Text(text = "Hola")
+-}
+\ No newline at end of file
++
++    Column (
++        modifier = Modifier.fillMaxSize(),
++        horizontalAlignment = Alignment.CenterHorizontally,
++        verticalArrangement = Arrangement.Center
++    )
++    {
++
++
++        Text("Mascota Feliz",
++            color = Color.Green,
++            fontSize = 48.sp
++        )
++        Text("Bienvenido")
++
++        Row {
++            OutlinedButton(onClick = { /*TODO*/ }) {
++                Text("Ta lindo")
++            }
++
++            Spacer(modifier = Modifier.width(10.dp))
++
++            OutlinedButton(onClick = { /*TODO*/ }) {
++                Text("Ta feo")
++            }
++        }
++    }
++}
+Index: app/src/main/java/com/example/mascotafeliz/screens/SplashScreen.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.mascotafeliz.screens\r\n\r\nimport android.view.animation.OvershootInterpolator\r\nimport androidx.compose.animation.core.Animatable\r\nimport androidx.compose.animation.core.tween\r\nimport androidx.compose.foundation.BorderStroke\r\nimport androidx.compose.foundation.layout.Arrangement\r\nimport androidx.compose.foundation.layout.Column\r\nimport androidx.compose.foundation.layout.Spacer\r\nimport androidx.compose.foundation.layout.height\r\nimport androidx.compose.foundation.layout.padding\r\nimport androidx.compose.foundation.layout.size\r\nimport androidx.compose.foundation.shape.CircleShape\r\nimport androidx.compose.material3.MaterialTheme\r\nimport androidx.compose.material3.Surface\r\nimport androidx.compose.material3.Text\r\nimport androidx.compose.runtime.Composable\r\nimport androidx.compose.runtime.LaunchedEffect\r\nimport androidx.compose.runtime.remember\r\nimport androidx.compose.ui.Alignment\r\nimport androidx.compose.ui.Modifier\r\nimport androidx.compose.ui.draw.scale\r\nimport androidx.compose.ui.graphics.Color\r\nimport androidx.compose.ui.unit.dp\r\nimport androidx.navigation.NavController\r\nimport com.example.mascotafeliz.navigation.Screens\r\nimport kotlinx.coroutines.delay\r\n\r\n@Composable\r\nfun SplashScreen(navController: NavController) {\r\n    val scale = remember {\r\n        Animatable(0f)\r\n    }\r\n    LaunchedEffect(key1 = true){\r\n        scale.animateTo(targetValue = 0.9f,\r\n            animationSpec = tween(durationMillis = 800,\r\n                easing = {\r\n                    OvershootInterpolator(8f)\r\n                        .getInterpolation(it)\r\n                }\r\n                ),\r\n            )\r\n        delay(3500L)\r\n        navController.navigate(Screens.Login.name)\r\n    }\r\n    val color = MaterialTheme.colorScheme.primary\r\n    Surface(modifier = Modifier\r\n        .padding(15.dp)\r\n        .size(330.dp)\r\n        .scale(scale.value),\r\n        shape = CircleShape,\r\n        color = Color.White,\r\n        border = BorderStroke(width = 2.dp, color = color)\r\n    ){\r\n        Column(modifier = Modifier\r\n            .padding(1.dp),\r\n            horizontalAlignment = Alignment.CenterHorizontally,\r\n            verticalArrangement = Arrangement.Center\r\n        ){\r\n            Text(text = \"Proyecto Final Programacion II\",\r\n                color = color.copy(alpha = 0.5f)\r\n                )\r\n            Spacer(modifier = Modifier.height(15.dp))\r\n            Text(\"Carrito de Compras de Mascotas\",\r\n                color=color\r\n                )\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/mascotafeliz/screens/SplashScreen.kt b/app/src/main/java/com/example/mascotafeliz/screens/SplashScreen.kt
+--- a/app/src/main/java/com/example/mascotafeliz/screens/SplashScreen.kt	(revision 2a28dbce75687c60d169cabc8c594e33694d58c7)
++++ b/app/src/main/java/com/example/mascotafeliz/screens/SplashScreen.kt	(date 1699612016264)
+@@ -1,6 +1,7 @@
+ package com.example.mascotafeliz.screens
+ 
+ import android.view.animation.OvershootInterpolator
++import android.window.SplashScreen
+ import androidx.compose.animation.core.Animatable
+ import androidx.compose.animation.core.tween
+ import androidx.compose.foundation.BorderStroke
+@@ -21,9 +22,11 @@
+ import androidx.compose.ui.Modifier
+ import androidx.compose.ui.draw.scale
+ import androidx.compose.ui.graphics.Color
++import androidx.compose.ui.tooling.preview.Preview
+ import androidx.compose.ui.unit.dp
+ import androidx.navigation.NavController
+ import com.example.mascotafeliz.navigation.Screens
++import com.example.mascotafeliz.ui.theme.MascotaFelizTheme
+ import kotlinx.coroutines.delay
+ 
+ @Composable
+@@ -66,4 +69,12 @@
+                 )
+         }
+     }
+-}
+\ No newline at end of file
++}
++
++/*@Preview(showBackground = true)
++@Composable
++fun SplashScreenPreview(){
++    MascotaFelizTheme {
++        SplashScreen
++    }
++}*/
+\ No newline at end of file
+Index: app/src/main/java/com/example/mascotafeliz/screens/Accesorios.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.mascotafeliz.screens\r\n\r\nimport androidx.compose.material3.Text\r\nimport androidx.compose.runtime.Composable\r\nimport androidx.navigation.NavController\r\n\r\n@Composable\r\nfun Accesorios(navController: NavController){\r\n    Text(text = \"Hola\")\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/mascotafeliz/screens/Accesorios.kt b/app/src/main/java/com/example/mascotafeliz/screens/Accesorios.kt
+--- a/app/src/main/java/com/example/mascotafeliz/screens/Accesorios.kt	(revision 2a28dbce75687c60d169cabc8c594e33694d58c7)
++++ b/app/src/main/java/com/example/mascotafeliz/screens/Accesorios.kt	(date 1699616149621)
+@@ -1,10 +1,62 @@
+ package com.example.mascotafeliz.screens
+ 
++import androidx.compose.foundation.layout.Arrangement
++import androidx.compose.foundation.layout.Column
++import androidx.compose.foundation.layout.Row
++import androidx.compose.foundation.layout.fillMaxSize
++import androidx.compose.foundation.layout.size
++import androidx.compose.material.icons.Icons
++import androidx.compose.material.icons.filled.Commit
++import androidx.compose.material.icons.filled.ShoppingCart
++import androidx.compose.material.icons.rounded.ShoppingCart
++import androidx.compose.material3.Icon
++import androidx.compose.material3.IconButton
++import androidx.compose.material3.OutlinedButton
+ import androidx.compose.material3.Text
+ import androidx.compose.runtime.Composable
++import androidx.compose.ui.Alignment
++import androidx.compose.ui.Modifier
++import androidx.compose.ui.graphics.Color
++import androidx.compose.ui.tooling.preview.Preview
+ import androidx.navigation.NavController
++import com.example.mascotafeliz.ui.theme.MascotaFelizTheme
+ 
+ @Composable
+ fun Accesorios(navController: NavController){
+-    Text(text = "Hola")
++    Column (
++        modifier = Modifier.fillMaxSize(),
++        horizontalAlignment = Alignment.CenterHorizontally,
++        verticalArrangement = Arrangement.Center
++    ) {
++        Row {
++            OutlinedButton(onClick = { /*TODO*/ }) {
++                Text(text = "Carrito")
++                Icon(Icons.Rounded.ShoppingCart, contentDescription = null)
++            }
++        }
++    }
++}
++
++@Composable
++fun Carrito(){
++    Column (
++        modifier = Modifier.fillMaxSize(),
++        horizontalAlignment = Alignment.CenterHorizontally,
++        verticalArrangement = Arrangement.Center
++    ) {
++        Row {
++            OutlinedButton(onClick = { /*TODO*/ }) {
++                Text(text = "Carrito")
++                Icon(Icons.Rounded.ShoppingCart, contentDescription = null)
++            }
++        }
++    }
++}
++
++@Preview(showBackground = true)
++@Composable
++fun CarritoPreview(){
++    MascotaFelizTheme {
++        Carrito()
++    }
+ }
+\ No newline at end of file
+Index: .idea/.gitignore
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.gitignore	(revision 2a28dbce75687c60d169cabc8c594e33694d58c7)
++++ /dev/null	(revision 2a28dbce75687c60d169cabc8c594e33694d58c7)
+@@ -1,3 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+Index: app/src/main/java/com/example/mascotafeliz/navigation/Navigation.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.mascotafeliz.navigation\r\n\r\nimport androidx.compose.runtime.Composable\r\nimport androidx.navigation.compose.NavHost\r\nimport androidx.navigation.compose.composable\r\nimport androidx.navigation.compose.rememberNavController\r\nimport com.example.mascotafeliz.screens.Accesorios\r\nimport com.example.mascotafeliz.screens.Alimentos\r\nimport com.example.mascotafeliz.screens.Mascotas\r\nimport com.example.mascotafeliz.screens.SplashScreen\r\nimport com.example.mascotafeliz.screens.home.Home\r\nimport com.example.mascotafeliz.screens.login.Login\r\n\r\n@Composable\r\nfun Navigation(){\r\n    val navController = rememberNavController()\r\n    NavHost(\r\n        navController = navController,\r\n        startDestination = Screens.SplashScreen.name\r\n     ){\r\n        composable(Screens.SplashScreen.name){\r\n            SplashScreen(navController = navController)\r\n        }\r\n        composable(Screens.Login.name){\r\n            Login(navController = navController)\r\n        }\r\n        composable(Screens.HomeScreen.name){\r\n            Home(navController = navController)\r\n        }\r\n        composable(Screens.Mascotas.name){\r\n            Mascotas(navController = navController)\r\n        }\r\n        composable(Screens.Alimentos.name){\r\n            Alimentos(navController = navController)\r\n        }\r\n        composable(Screens.Accesorios.name){\r\n            Accesorios(navController = navController)\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/mascotafeliz/navigation/Navigation.kt b/app/src/main/java/com/example/mascotafeliz/navigation/Navigation.kt
+--- a/app/src/main/java/com/example/mascotafeliz/navigation/Navigation.kt	(revision 2a28dbce75687c60d169cabc8c594e33694d58c7)
++++ b/app/src/main/java/com/example/mascotafeliz/navigation/Navigation.kt	(date 1699612545684)
+@@ -1,6 +1,7 @@
+ package com.example.mascotafeliz.navigation
+ 
+ import androidx.compose.runtime.Composable
++import androidx.compose.ui.tooling.preview.Preview
+ import androidx.navigation.compose.NavHost
+ import androidx.navigation.compose.composable
+ import androidx.navigation.compose.rememberNavController
+@@ -11,6 +12,7 @@
+ import com.example.mascotafeliz.screens.home.Home
+ import com.example.mascotafeliz.screens.login.Login
+ 
++@Preview (showBackground = true)
+ @Composable
+ fun Navigation(){
+     val navController = rememberNavController()
